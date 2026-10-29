@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "society-box"
+version = "0.1.0a2"
+description = "Local-first, evidence-first economics research workbench"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "EconScope Sandbox contributors"}]
+dependencies = []
+
+[project.scripts]
+societybox = "societybox.__main__:main"
+econscope = "econscope.__main__:main"
+
+[tool.setuptools]
+packages = ["econscope", "societybox"]
+license-files = ["LICENSE", "NOTICE"]
+
+[tool.setuptools.package-data]
+econscope = ["resources/AGENT.md", "resources/background.v1.json", "resources/upstream.v1.json", "resources/host-response.v1.schema.json", "resources/research-studies.v1.json"]

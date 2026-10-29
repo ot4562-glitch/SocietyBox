@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:societybox:host-response:v1",
+  "title": "Untrusted Society Box host response v1",
+  "description": "Wire structure only. Text is unverified and tool calls are blocked proposals. This schema grants no authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "assistant_text", "tool_calls"],
+  "properties": {
+    "schema": {"const": "societybox-host-response-v1"},
+    "assistant_text": {"type": "string"},
+    "tool_calls": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "arguments"],
+        "properties": {
+          "id": {"$ref": "#/$defs/identifier"},
+          "name": {"$ref": "#/$defs/identifier"},
+          "arguments": {"type": "object"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.:-]{0,127}(?![\\s\\S])"
+    }
+  },
+  "x-societybox-wire-rules": {
+    "encoding": "UTF-8",
+    "max_bytes": 64000,
+    "duplicate_object_keys": "REJECT_AT_ANY_DEPTH",
+    "tool_call_ids": "UNIQUE",
+    "unicode": "NO_UNPAIRED_SURROGATES",
+    "numbers": "FINITE_PYTHON_JSON_REPRESENTATION",
+    "enforcement": "parse_host_response_REQUIRED_SCHEMA_ALONE_INSUFFICIENT"
+  },
+  "examples": [
+    {"schema": "societybox-host-response-v1", "assistant_text": "", "tool_calls": []},
+    {"schema": "societybox-host-response-v1", "assistant_text": "Proposed action requires separate authorization.", "tool_calls": [{"id": "proposal-1", "name": "unknown_tool", "arguments": {"approved": true}}]}
+  ]
+}

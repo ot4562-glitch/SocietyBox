@@ -1,0 +1,23 @@
+# Public source checkout (never a copy of internal Git history)
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.egg-info/
+build/
+dist/
+research_data/
+research-workspaces/
+reports/
+references/
+design-private/
+docs/
+AGENT.md
+AGENTS.md
+GOAL.md
+.ai-bridge/
+.github-export/
+*.key
+*.pem
+.env
+.env.*

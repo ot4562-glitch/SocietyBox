@@ -1,0 +1,20 @@
+{
+  "schema": "societybox-engine-study-v1",
+  "family": "allocation",
+  "question": "Given these invented linear resource constraints, what continuous allocation maximizes the declared objective?",
+  "source": {
+    "id": "societybox-authored-allocation-example",
+    "license": "CC0-1.0",
+    "kind": "SYNTHETIC",
+    "basis": "Original invented example coefficients dedicated to the public domain; no empirical observations."
+  },
+  "rights": {"local_processing": "PERMITTED", "report_export": "PERMITTED"},
+  "execution": "EXPLICIT_OFFLINE_FALLBACK",
+  "request": {
+    "engine": "HiGHS",
+    "model": "linear_program_max",
+    "objective": [3, 2],
+    "constraints": [[1, 1], [1, 0], [0, 1]],
+    "bounds": [4, 2, 3]
+  }
+}

@@ -1,0 +1,594 @@
+{
+  "schema": "societybox-offline-background-v1",
+  "updated": "2026-10-22",
+  "purpose": "Original offline method primers and research source locators; no empirical observations, confidential data, licensed textbooks or imported upstream code.",
+  "languages": [
+    "en",
+    "zh-Hans",
+    "ko",
+    "ja"
+  ],
+  "source_methodology": "original_conceptual_summary_grounded_in_local_upstream_feature_family_inventory",
+  "empirical_validation": "NOT_ESTABLISHED",
+  "offline_dataset_payloads": "NONE",
+  "numeric_empirical_facts": "NONE",
+  "cards": [
+    {
+      "id": "econ-micro",
+      "category": "economics",
+      "title": {
+        "en": "Microeconomics and market mechanisms",
+        "zh-Hans": "微观经济学与市场机制",
+        "ko": "미시경제학과 시장 메커니즘",
+        "ja": "ミクロ経済学と市場メカニズム"
+      },
+      "summary": {
+        "en": "Specify actors, preferences, technologies, constraints, information and equilibrium concept before claiming an outcome.",
+        "zh-Hans": "先明确行为主体、偏好、技术、约束、信息和均衡概念，再讨论模型结果。",
+        "ko": "결과를 주장하기 전에 경제주체·선호·기술·제약·정보·균형 개념을 명시합니다。",
+        "ja": "結果を主張する前に、主体・選好・技術・制約・情報・均衡概念を明示します。"
+      },
+      "method_brief_en": "Distinguish behavioral premises from measurements; welfare and efficiency need explicit definitions, institutions and distributional weights.",
+      "reference_ids": [
+        "QE-03",
+        "HARK-01",
+        "SIM-01"
+      ],
+      "critical_prerequisites": [
+        "researcher-defined behavioral equations",
+        "price and time units",
+        "endogenous/exogenous variables"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "econ-macro",
+      "category": "economics",
+      "title": {
+        "en": "Macroeconomic dynamics and policy",
+        "zh-Hans": "宏观经济动态与政策",
+        "ko": "거시경제 동학과 정책",
+        "ja": "マクロ経済の動学と政策"
+      },
+      "summary": {
+        "en": "Dynamic macro models require stated identities, shocks, policy rules, initial/steady states and time resolution.",
+        "zh-Hans": "动态宏观模型需要明确恒等式、冲击、政策规则、初始或稳态以及时间分辨率。",
+        "ko": "동태 거시 모형에는 항등식·충격·정책준칙·초깃값 또는 정상상태·시간 해상도가 필요합니다.",
+        "ja": "動学マクロモデルには恒等式、ショック、政策ルール、初期・定常状態、時間粒度が必要です。"
+      },
+      "method_brief_en": "A .mod file or DSGE label does not prove solution existence, calibration validity, convergence or policy identification. Solvers may fail.",
+      "reference_ids": [
+        "DYN-01",
+        "DYN-02",
+        "DYN-03",
+        "DYN-04",
+        "DYN-06"
+      ],
+      "critical_prerequisites": [
+        "model and solver version",
+        "convergence/boundary checks",
+        "shock units and lag assumptions"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "econ-households",
+      "category": "economics",
+      "title": {
+        "en": "Heterogeneous households and lifecycle",
+        "zh-Hans": "异质性家庭与生命周期",
+        "ko": "이질적 가계와 생애주기",
+        "ja": "異質的家計とライフサイクル"
+      },
+      "summary": {
+        "en": "Consumption, saving and heterogeneous-agent results depend on budgets, income risk, preferences and aggregation.",
+        "zh-Hans": "消费、储蓄与异质性主体的结果取决于预算、收入风险、偏好与加总方式。",
+        "ko": "소비·저축·이질적 주체 결과는 예산·소득위험·선호·집계 방식에 좌우됩니다.",
+        "ja": "消費・貯蓄・異質的主体の結果は予算、所得リスク、選好、集計方法に依存します。"
+      },
+      "method_brief_en": "Specify borrowing limits, horizons, stochastic processes, estimation targets, grids and interpolation diagnostics; distinguish representative agent assumptions.",
+      "reference_ids": [
+        "HARK-01",
+        "HARK-02",
+        "HARK-03",
+        "HARK-04"
+      ],
+      "critical_prerequisites": [
+        "calibration evidence or explicit assumption",
+        "grid/convergence conditions",
+        "population weights"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "econ-markov-dp",
+      "category": "economics",
+      "title": {
+        "en": "Markov and dynamic programming",
+        "zh-Hans": "马尔可夫过程与动态规划",
+        "ko": "마르코프 과정과 동적 계획법",
+        "ja": "マルコフ過程と動的計画法"
+      },
+      "summary": {
+        "en": "State transitions and optimal policies require transition probabilities, objectives and clear time semantics.",
+        "zh-Hans": "状态转移与最优策略需要转移概率、目标函数和明确的时间语义。",
+        "ko": "상태전이와 최적 정책에는 전이확률·목적함수·명확한 시간 의미가 필요합니다.",
+        "ja": "状態遷移と最適政策には遷移確率、目的関数、明確な時間の意味が必要です。"
+      },
+      "method_brief_en": "Check stochastic matrices, state space, discounting, terminal conditions, convergence and stationarity assumptions.",
+      "reference_ids": [
+        "QE-01",
+        "QE-02",
+        "QE-05"
+      ],
+      "critical_prerequisites": [
+        "transition matrix/source",
+        "timing and discount factor",
+        "solver residuals"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "econ-econometrics",
+      "category": "economics",
+      "title": {
+        "en": "Econometrics and statistical inference",
+        "zh-Hans": "计量经济学与统计推断",
+        "ko": "계량경제학과 통계적 추론",
+        "ja": "計量経済学と統計的推論"
+      },
+      "summary": {
+        "en": "An estimate needs its dataset vintage, estimand, sampling process, uncertainty and model diagnostics.",
+        "zh-Hans": "估计结果须说明数据版本、目标参数、抽样机制、不确定性与模型诊断。",
+        "ko": "추정 결과에는 데이터 버전·추정대상·표본추출 과정·불확실성·모형 진단이 필요합니다.",
+        "ja": "推定結果にはデータ版、推定対象、標本過程、不確実性、モデル診断が必要です。"
+      },
+      "method_brief_en": "Observational associations are not causal effects without justified identification. Distinguish estimation, prediction, diagnostics and sensitivity.",
+      "reference_ids": [
+        "DYN-06",
+        "DYN-07",
+        "QE-05"
+      ],
+      "critical_prerequisites": [
+        "valid sample and scope",
+        "standard errors and identification",
+        "out-of-sample setup where claimed"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "econ-games",
+      "category": "economics",
+      "title": {
+        "en": "Games and strategic behavior",
+        "zh-Hans": "博弈与战略行为",
+        "ko": "게임이론과 전략적 행동",
+        "ja": "ゲーム理論と戦略的行動"
+      },
+      "summary": {
+        "en": "Define players, actions, information, payoffs, timing and equilibrium concept; AI-agent behavior is not representative by default.",
+        "zh-Hans": "定义参与者、行动、信息、收益、时序与均衡概念；AI主体行为不能默认代表真实人群。",
+        "ko": "참가자·행동·정보·보수·시점·균형 개념을 명시하고 AI 행동을 곧 현실의 대표값으로 취급하지 않습니다.",
+        "ja": "プレイヤー、行動、情報、利得、時系列、均衡概念を明記し、AI行動を現実の代表値と見なしません。"
+      },
+      "method_brief_en": "Distinguish rule-based subjects from stochastic or LLM subjects. Report repeated-run variability and provider versions.",
+      "reference_ids": [
+        "QE-03",
+        "EA-01",
+        "EA-05"
+      ],
+      "critical_prerequisites": [
+        "game specification",
+        "observation boundaries",
+        "subject policy provenance"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "social-abm",
+      "category": "social_science",
+      "title": {
+        "en": "Agent-based models and scheduling",
+        "zh-Hans": "基于主体的建模与调度",
+        "ko": "행위자 기반 모형과 스케줄링",
+        "ja": "エージェントベースモデルとスケジューリング"
+      },
+      "summary": {
+        "en": "Agent models require declared state, interaction topology, schedules, random seeds, observations and calibration boundaries.",
+        "zh-Hans": "主体模型需要声明状态、交互拓扑、调度、随机种子、观测与校准范围。",
+        "ko": "행위자 모형에는 상태·상호작용 구조·실행 순서·난수 시드·관측·보정 범위가 필요합니다.",
+        "ja": "エージェントモデルには状態、相互作用、スケジュール、乱数シード、観測、校正範囲が必要です。"
+      },
+      "method_brief_en": "Synchronous and asynchronous updates can yield different results. A model demonstration is not historical validation.",
+      "reference_ids": [
+        "MESA-01",
+        "MESA-02",
+        "MESA-03",
+        "MESA-04",
+        "MESA-05"
+      ],
+      "critical_prerequisites": [
+        "schedule contract",
+        "randomness and repeats",
+        "observation/aggregation assumptions"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "social-networks",
+      "category": "social_science",
+      "title": {
+        "en": "Networks, diffusion and information",
+        "zh-Hans": "网络、扩散与信息",
+        "ko": "네트워크·확산·정보",
+        "ja": "ネットワーク・拡散・情報"
+      },
+      "summary": {
+        "en": "Network effects require actual edge data or labeled synthetic topology, diffusion rules and measured event criteria.",
+        "zh-Hans": "网络效应需要真实边数据或标注为合成的拓扑、扩散规则与可测量的事件准则。",
+        "ko": "네트워크 효과에는 실제 연결 데이터 또는 합성이라고 표시된 구조·확산 규칙·측정 가능한 사건 기준이 필요합니다.",
+        "ja": "ネットワーク効果には実際の結合データ又は合成と示した構造、拡散則、測定可能な事象基準が必要です。"
+      },
+      "method_brief_en": "Report sampling, missing ties, assortativity/endogeneity, exposure and time steps; do not infer causal contagion from correlation.",
+      "reference_ids": [
+        "MESA-02",
+        "SIM-03",
+        "SIM-05"
+      ],
+      "critical_prerequisites": [
+        "topology source",
+        "event detector and lag",
+        "uncertainty and alternatives"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "social-demography",
+      "category": "social_science",
+      "title": {
+        "en": "Demography and population dynamics",
+        "zh-Hans": "人口学与人口动态",
+        "ko": "인구학과 인구 동학",
+        "ja": "人口学と人口動態"
+      },
+      "summary": {
+        "en": "Population projections depend on baseline counts, births, deaths, migration, cohorts and time granularity.",
+        "zh-Hans": "人口预测取决于基期人数、生育、死亡、迁移、队列与时间粒度。",
+        "ko": "인구 예측은 기준 인구·출생·사망·이주·코호트·시간 단위에 좌우됩니다.",
+        "ja": "人口予測は基準人口、出生、死亡、移動、コホート、時間粒度に依存します。"
+      },
+      "method_brief_en": "Distinguish census observations, projections, administrative revisions and synthetic populations; document denominator changes.",
+      "reference_ids": [
+        "HARK-04",
+        "MESA-05",
+        "EGYM-01"
+      ],
+      "critical_prerequisites": [
+        "demographic release vintage",
+        "population unit/weights",
+        "scenario assumptions"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "social-causal",
+      "category": "methods",
+      "title": {
+        "en": "Causal identification and policy evaluation",
+        "zh-Hans": "因果识别与政策评估",
+        "ko": "인과 식별과 정책 평가",
+        "ja": "因果識別と政策評価"
+      },
+      "summary": {
+        "en": "State the causal estimand and identification assumptions; sensitivity and falsification checks are essential.",
+        "zh-Hans": "明确因果目标参数和识别假设；敏感性与证伪检验至关重要。",
+        "ko": "인과 추정 대상과 식별 가정을 명시하고 민감도·반증 검사를 수행해야 합니다.",
+        "ja": "因果推定対象と識別仮定を明示し、感度・反証検査を行う必要があります。"
+      },
+      "method_brief_en": "Counterfactual simulations are not randomized experiments. Explicitly separate normative comparisons, structural counterfactuals and empirically identified effects.",
+      "reference_ids": [
+        "DYN-08",
+        "QE-02",
+        "MESA-05"
+      ],
+      "critical_prerequisites": [
+        "assignment/exposure mechanism",
+        "confounding and interference",
+        "pre-specified estimand"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "social-institutions",
+      "category": "social_science",
+      "title": {
+        "en": "Political economy and institutions",
+        "zh-Hans": "政治经济学与制度",
+        "ko": "정치경제학과 제도",
+        "ja": "政治経済学と制度"
+      },
+      "summary": {
+        "en": "Policies, institutions and organizational incentives must be represented as explicit, challengeable model rules.",
+        "zh-Hans": "政策、制度与组织激励须表现为可检查、可质疑的明确模型规则。",
+        "ko": "정책·제도·조직 유인은 검토와 반증이 가능한 명시적 모형 규칙으로 표현합니다.",
+        "ja": "政策、制度、組織の誘因は検証・反証可能な明示的モデル規則として表現します。"
+      },
+      "method_brief_en": "Specify institutional scope, authority, compliance, behavioral response and distribution of consequences; avoid advocacy based on model output.",
+      "reference_ids": [
+        "DYN-08",
+        "EA-02",
+        "EGYM-04"
+      ],
+      "critical_prerequisites": [
+        "primary institutional text",
+        "separation of assumptions and observation",
+        "effect identification"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "social-spatial",
+      "category": "social_science",
+      "title": {
+        "en": "Spatial and historical social science",
+        "zh-Hans": "空间与历史社会科学",
+        "ko": "공간·역사 사회과학",
+        "ja": "空間・歴史社会科学"
+      },
+      "summary": {
+        "en": "Spatial and historical studies need units, spatial boundaries, observation dates, release vintages and map provenance.",
+        "zh-Hans": "空间与历史研究需要单位、空间边界、观测日期、发布版本及地图来源。",
+        "ko": "공간·역사 연구에는 단위·공간 경계·관측일·자료 공개 버전·지도 출처가 필요합니다.",
+        "ja": "空間・歴史研究には単位、空間境界、観測日、公開版、地図の出典が必要です。"
+      },
+      "method_brief_en": "Historical backtesting with contemporary data or model knowledge can leak the future. Publication dates are different from observation dates.",
+      "reference_ids": [
+        "SIM-02",
+        "MESA-02",
+        "DYN-08"
+      ],
+      "critical_prerequisites": [
+        "data release vintage",
+        "historical information set",
+        "geographical codes and uncertainty"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "research-provenance",
+      "category": "assurance",
+      "title": {
+        "en": "Scientific provenance and reproduction",
+        "zh-Hans": "科研溯源与可重复性",
+        "ko": "연구 출처 추적과 재현성",
+        "ja": "研究の出典追跡と再現性"
+      },
+      "summary": {
+        "en": "Keep sources, assumptions, engine/code versions, output cells, independent reruns and limitations separate.",
+        "zh-Hans": "将来源、假设、引擎与代码版本、输出单元、独立复算和局限性分开记录。",
+        "ko": "자료 출처·가정·엔진/코드 버전·출력 셀·독립 재실행·한계를 분리해 기록합니다.",
+        "ja": "出典、仮定、エンジン/コード版、出力セル、独立再実行、限界を区別して記録します。"
+      },
+      "method_brief_en": "A hash detects matching content; it does not establish author identity, run authenticity or a study's empirical validity. Cite exact run/cell/source graph edges.",
+      "reference_ids": [
+        "DYN-09",
+        "MESA-04",
+        "SIM-06"
+      ],
+      "critical_prerequisites": [
+        "execution receipt",
+        "rights and licensing",
+        "independent reproduction"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "research-numerics",
+      "category": "assurance",
+      "title": {
+        "en": "Numerical precision, uncertainty and failure",
+        "zh-Hans": "数值精度、不确定性与失败",
+        "ko": "수치 정밀도·불확실성·실패",
+        "ja": "数値精度・不確実性・失敗"
+      },
+      "summary": {
+        "en": "Convergence, numerical error, stochastic uncertainty and structural uncertainty are distinct research questions.",
+        "zh-Hans": "收敛性、数值误差、随机不确定性和结构不确定性是不同问题。",
+        "ko": "수렴·수치 오차·확률적 불확실성·구조적 불확실성은 서로 다른 문제입니다.",
+        "ja": "収束、数値誤差、確率的不確実性、構造的不確実性は別の問題です。"
+      },
+      "method_brief_en": "Do not promote Decimal flags or deterministic reproducibility to accuracy guarantees; always report solver tolerances and failures when supported.",
+      "reference_ids": [
+        "DYN-02",
+        "QE-04",
+        "HARK-03"
+      ],
+      "critical_prerequisites": [
+        "stability/convergence diagnostics",
+        "units and time",
+        "independent benchmark"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "llm-agents",
+      "category": "methods",
+      "title": {
+        "en": "LLM-driven actors versus human populations",
+        "zh-Hans": "LLM驱动主体与真实人群",
+        "ko": "LLM 행위자와 실제 인간 집단",
+        "ja": "LLM主体と実際の人間集団"
+      },
+      "summary": {
+        "en": "An LLM participant is a versioned experimental policy, not automatically a representative human subject.",
+        "zh-Hans": "LLM参与者是一种带版本的实验策略，不能自动当作代表性人类受试者。",
+        "ko": "LLM 참가자는 버전이 있는 실험 정책이지 대표성 있는 인간 표본이 아닙니다.",
+        "ja": "LLM参加者は版管理された実験方策であり、代表的な人間標本ではありません。"
+      },
+      "method_brief_en": "Record prompt, model version, sampling configuration, tool visibility, seed if meaningful, cost, privacy and runs. LLM hallucinations must not become state transitions without typed validation.",
+      "reference_ids": [
+        "EA-05",
+        "ECO-04",
+        "SIM-08"
+      ],
+      "critical_prerequisites": [
+        "provider attestation",
+        "privacy/export authorization",
+        "repeated-run tests"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    },
+    {
+      "id": "research-locales",
+      "category": "assurance",
+      "title": {
+        "en": "Four-language scientific and data integrity",
+        "zh-Hans": "四语种科研与数据完整性",
+        "ko": "4개 언어 연구·데이터 무결성",
+        "ja": "四言語の研究・データ整合性"
+      },
+      "summary": {
+        "en": "English, simplified Chinese, Korean and Japanese labels may differ, while equations, values, provenance and time semantics must not.",
+        "zh-Hans": "英文、简体中文、韩文与日文标签可以不同，但方程、数值、溯源与时间语义不得变化。",
+        "ko": "영어·중국어 간체·한국어·일본어 표기는 달라도 방정식·숫자·출처·시간 의미는 바뀌면 안 됩니다.",
+        "ja": "英語・簡体字中国語・韓国語・日本語の表記は異なっても、方程式、数値、出典、時間の意味は変えません。"
+      },
+      "method_brief_en": "Country-specific compliance and export-law claims need counsel review, and CJK PDF quality needs actual font/render testing.",
+      "reference_ids": [],
+      "critical_prerequisites": [
+        "locale/encoding QA",
+        "font redistribution rights",
+        "jurisdiction-specific legal review"
+      ],
+      "source_kind": "ORIGINAL_METHOD_PRIMER_LINKED_TO_PINNED_UPSTREAM_FEATURE_FAMILIES",
+      "source_verified_for_empirical_facts": false,
+      "numeric_results_present": false,
+      "licensing": "ORIGINAL_SUMMARY_NO_UPSTREAM_CODE_OR_TEXT_REPRODUCED",
+      "research_assurance": "BACKGROUND_GUIDE_ONLY_NOT_PRIMARY_EMPIRICAL_EVIDENCE"
+    }
+  ],
+  "source_portal_index": [
+    {
+      "region": "US",
+      "label": "US BEA / BLS / Federal Reserve data portals",
+      "locators": [
+        "https://www.bea.gov/",
+        "https://www.bls.gov/",
+        "https://fred.stlouisfed.org/"
+      ],
+      "state": "SOURCE_PORTAL_POINTER_ONLY_NO_BUNDLED_DATA_NO_CURRENT_ACCESS_VALIDATION",
+      "license": "NOT_REVIEWED",
+      "official_source_authentication": "NOT_VERIFIED_THIS_BUILD"
+    },
+    {
+      "region": "CN",
+      "label": "National Bureau of Statistics of China / PBOC",
+      "locators": [
+        "https://www.stats.gov.cn/",
+        "https://www.pbc.gov.cn/"
+      ],
+      "state": "SOURCE_PORTAL_POINTER_ONLY_NO_BUNDLED_DATA_NO_CURRENT_ACCESS_VALIDATION",
+      "license": "NOT_REVIEWED",
+      "official_source_authentication": "NOT_VERIFIED_THIS_BUILD"
+    },
+    {
+      "region": "KR",
+      "label": "KOSIS / Bank of Korea ECOS",
+      "locators": [
+        "https://kosis.kr/",
+        "https://ecos.bok.or.kr/"
+      ],
+      "state": "SOURCE_PORTAL_POINTER_ONLY_NO_BUNDLED_DATA_NO_CURRENT_ACCESS_VALIDATION",
+      "license": "NOT_REVIEWED",
+      "official_source_authentication": "NOT_VERIFIED_THIS_BUILD"
+    },
+    {
+      "region": "JP",
+      "label": "e-Stat / Bank of Japan",
+      "locators": [
+        "https://www.e-stat.go.jp/",
+        "https://www.boj.or.jp/"
+      ],
+      "state": "SOURCE_PORTAL_POINTER_ONLY_NO_BUNDLED_DATA_NO_CURRENT_ACCESS_VALIDATION",
+      "license": "NOT_REVIEWED",
+      "official_source_authentication": "NOT_VERIFIED_THIS_BUILD"
+    },
+    {
+      "region": "CROSS",
+      "label": "World Bank / OECD statistical portals",
+      "locators": [
+        "https://data.worldbank.org/",
+        "https://data-explorer.oecd.org/"
+      ],
+      "state": "SOURCE_PORTAL_POINTER_ONLY_NO_BUNDLED_DATA_NO_CURRENT_ACCESS_VALIDATION",
+      "license": "NOT_REVIEWED",
+      "official_source_authentication": "NOT_VERIFIED_THIS_BUILD"
+    }
+  ],
+  "limits": [
+    "All items are review aids, not cited empirical data or legal compliance evidence.",
+    "All source portal links are pointers only; network validation or licensing and dataset snapshots are not bundled.",
+    "Technical methods need actual researcher-selected data, estimands and executable verified engines.",
+    "Mixed-language scientific PDF rendering, human translation review and full specialized curriculum coverage are not validated."
+  ]
+}

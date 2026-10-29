@@ -1,0 +1,11 @@
+Society Box / EconScope Sandbox
+Copyright (c) 2026 EconScope Sandbox contributors
+
+This distribution is provided under the accompanying MIT LICENSE.
+The econscope and societybox command names refer to the same product.
+
+Local references/, private design inputs, and external research datasets are
+not part of this distribution. Upstream feature registries describe references;
+they do not include upstream engines or grant rights to third-party software
+or data. Each separately obtained upstream project retains its own license.
+Synthetic examples are engineering specimens, not empirical research evidence.

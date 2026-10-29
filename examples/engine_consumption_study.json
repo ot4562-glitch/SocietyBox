@@ -1,0 +1,18 @@
+{
+  "schema": "societybox-engine-study-v1",
+  "family": "consumption",
+  "question": "Under the declared two-date log-utility assumptions, what consumption satisfies the budget and Euler equations?",
+  "source": {
+    "id": "societybox-authored-consumption-example",
+    "license": "CC0-1.0",
+    "kind": "SYNTHETIC",
+    "basis": "Original invented example coefficients dedicated to the public domain; no empirical observations."
+  },
+  "rights": {"local_processing": "PERMITTED", "report_export": "PERMITTED"},
+  "execution": "EXPLICIT_OFFLINE_FALLBACK",
+  "request": {
+    "engine": "HARK",
+    "model": "two_period_log_consumption",
+    "parameters": {"beta": 0.5, "gross_return": 2, "resources": 4}
+  }
+}
