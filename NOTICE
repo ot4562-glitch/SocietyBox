@@ -1,7 +1,10 @@
 Society Box / EconScope Sandbox
 Copyright (c) 2026 EconScope Sandbox contributors
 
-This distribution is provided under the accompanying MIT LICENSE.
+This distribution is provided under the accompanying Apache License, Version 2.0.
+The initial Society Box source-only snapshot was distributed with an MIT license.
+That earlier grant is not revoked by this proposed change.
+
 The econscope and societybox command names refer to the same product.
 
 Local references/, private design inputs, and external research datasets are

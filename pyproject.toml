@@ -8,7 +8,7 @@ version = "0.1.0a2"
 description = "Local-first, evidence-first economics research workbench"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "MIT"}
+license = {text = "Apache-2.0"}
 authors = [{name = "EconScope Sandbox contributors"}]
 dependencies = []
 

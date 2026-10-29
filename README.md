@@ -8,7 +8,7 @@
 
 ![Development stage](https://img.shields.io/badge/status-pre--alpha-64748b?style=flat-square)
 ![Python](https://img.shields.io/badge/Python-%3E%3D3.10-3776AB?style=flat-square&logo=python&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-16a34a?style=flat-square)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-16a34a?style=flat-square)](LICENSE)
 ![Research mode](https://img.shields.io/badge/LLM-optional-6366f1?style=flat-square)
 
 *A research environment built to show not only what a model calculated, but what the evidence actually supports.*
@@ -134,7 +134,7 @@ There is no artificial cap on the number of mathematics-based economics function
 
 ## License and scientific limits
 
-Society Box's own source is distributed under the **MIT License** (see [LICENSE](LICENSE) and [NOTICE](NOTICE)). This does **not** automatically grant rights to third-party research software, archived source trees, datasets, documentation, or commercial products. Functional inspiration is implemented independently using legally accessible mathematics and documented methods.
+Society Box's own source is offered under the **Apache License, Version 2.0** (see [LICENSE](LICENSE) and [NOTICE](NOTICE)). Apache-2.0 includes an express patent-license grant from contributors for applicable contributions and requires preserving relevant notices. The earlier source-only snapshot was issued under MIT; that prior permission is not revoked. This proposed relicensing should be merged only after confirming rights to license all included contributions. This does **not** automatically grant rights to third-party research software, archived source trees, datasets, documentation, or commercial products. Functional inspiration is implemented independently using legally accessible mathematics and documented methods.
 
 A solver can be numerically correct while its identification assumptions, source authenticity, data availability, or policy interpretation remain unverified. Society Box makes those boundaries explicit.
 
