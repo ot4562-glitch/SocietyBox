@@ -77,12 +77,17 @@ class _QR:
         if any(not math.isfinite(v) for v in result): _fail('FINITE_RANGE')
         return result
 
-    def inverse_information(self):
+    def inverse_information(self,*,weight_root=1.0):
         columns=[self._backsolve([float(i==j) for i in range(self.p)]) for j in range(self.p)]
         inverse=[list(row) for row in zip(*columns)]; result=[[0.0]*self.p for _ in range(self.p)]
+        # Unscale each row *before* the Gram product: a weight ratio can span
+        # hundreds of orders of magnitude, with a finite original X'WX inverse
+        # even when the normalized inverse alone would overflow.
+        rows=[[v/self.scales[index]/weight_root for v in inverse[i]]
+              for i,index in enumerate(self.permutation)]
         for i,index in enumerate(self.permutation):
             for j,other in enumerate(self.permutation):
-                result[index][other]=_dot(inverse[i],inverse[j])/self.scales[index]/self.scales[other]
+                result[index][other]=_dot(rows[i],rows[j])
         if any(not math.isfinite(v) for row in result for v in row) or any(result[i][i]<=0 for i in range(self.p)):
             _fail('INVERSE_INFORMATION_RANGE')
         return result
@@ -96,12 +101,19 @@ def least_squares(design,target,*,weights=None):
     if type(weights) is not list or len(weights)!=len(design): _fail('WEIGHTS_INVALID')
     weights=list(map(_finite,weights))
     if any(w<=0 for w in weights): _fail('POSITIVE_WEIGHTS_REQUIRED')
-    roots=list(map(math.sqrt,weights))
+    # A common positive weight multiplier must not change the fit. Normalize
+    # the *square roots*, not w/max(w): direct weight ratios can underflow to
+    # zero even when the corresponding root ratios are still representable.
+    max_weight=max(weights)
+    max_root=math.sqrt(max_weight)
+    roots=[math.sqrt(w)/max_root for w in weights]
     if any(type(row) is not list for row in design): _fail('DIMENSIONS_INVALID')
     factor=_QR([[_finite(v)*root for v in row] for row,root in zip(design,roots)])
     y=list(map(_finite,target)); coefficients=factor.solve([v*root for v,root in zip(y,roots)])
     residuals=[v-_dot(list(map(_finite,row)),coefficients) for row,v in zip(design,y)]
-    return dict(coefficients=coefficients,inverse_information=factor.inverse_information(),residuals=residuals,
+    # The inverse information must use the original weights. Scale each QR
+    # inverse row by sqrt(max_weight) before forming its Gram product.
+    return dict(coefficients=coefficients,inverse_information=factor.inverse_information(weight_root=max_root),residuals=residuals,
                 weighted_sse=_dot([w*e for w,e in zip(weights,residuals)],residuals),
                 column_permutation=list(factor.permutation),rank_tolerance=factor.rank_tolerance,
                 arithmetic='BINARY64_COLUMN_EQUILIBRATED_PIVOTED_HOUSEHOLDER_QR')
