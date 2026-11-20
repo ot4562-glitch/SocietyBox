@@ -157,7 +157,10 @@ class StratifiedSurveyMeanTests(unittest.TestCase):
                                          in_domain=rng.randrange(4)!=0))
             domain={ (r['stratum'],r['psu']) for r in rows if r['in_domain'] }
             if len(domain)<2:
-                continue
+                # Guarantee that all 240 seeded cases exercise the exact
+                # oracle, including rare sparse domain draws.
+                rows[0]['in_domain']=True
+                rows[-1]['in_domain']=True
             q=case(rows=rows)
             out=stratified_psu_mean(q)
             W=sum((F(r['population_weight']) for r in rows if r['in_domain']),F(0))
