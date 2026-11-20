@@ -204,6 +204,26 @@ class SRSWORPSUFinitePopulationCorrectionTests(unittest.TestCase):
             tested+=1
         self.assertEqual(tested,220)
 
+    def test_declared_maximum_design_budget_2048_rows_512_psus(self):
+        spec=example()
+        spec['rows']=[]
+        spec['population_psus_by_stratum']={f'h{h}':9 for h in range(64)}
+        for h in range(64):
+            for psu in range(8):
+                for j in range(4):
+                    spec['rows'].append(dict(unit=f'u{h}_{psu}_{j}',stratum=f'h{h}',
+                                             psu=f'p{psu}',value=str((h+7*psu+j)%19),
+                                             population_weight='1',in_domain=True))
+        got=stratified_psu_fpc_mean(spec)
+        self.assertEqual(got['observations'],2048)
+        self.assertEqual(got['total_psus'],512)
+        self.assertEqual(got['strata_count'],64)
+        self.assertEqual(got['degrees_of_freedom'],448)
+        self.assertEqual(len(got['stratum_corrections']),64)
+        self.assertEqual(F(got['fpc_variance_exact']),F(got['uncorrected_variance_exact'])/9)
+        self.assertTrue(all(item['fpc_multiplier_exact']=='1/9'
+                            for item in got['stratum_corrections']))
+
     def test_real_checkpoint_cancellation_and_deadline(self):
         stop=threading.Event();stop.set()
         with self.assertRaisesRegex(ValueError,'OPERATION_CANCELLED'):
