@@ -179,3 +179,45 @@ def f_critical_value(upper_tail_probability, numerator_df, denominator_df):
                 tail_absolute_error=abs(tail-alpha), tail_relative_error=relative_error,
                 numerator_df=d1,denominator_df=d2,iterations=iteration,
                 arithmetic='BINARY64_NOT_INTERVAL_CERTIFIED')
+
+
+def chi_square_critical_value(upper_tail_probability, degrees_of_freedom):
+    """Central chi-square inverse upper tail with a checked numerical bracket.
+
+    Alpha in [1e-12,1-1e-12], integer degrees of freedom in [1,10000].
+    The bracket and tail residual are numerical, not interval certification.
+    This inversion does not validate the assumptions of a statistical test.
+    """
+    if type(upper_tail_probability) not in (int,float,Fraction):
+        raise ValueError('INFERENCE_TAIL_PROBABILITY_INVALID')
+    try: alpha = float(upper_tail_probability)
+    except (OverflowError,ValueError) as error:
+        raise ValueError('INFERENCE_TAIL_PROBABILITY_INVALID') from error
+    if not math.isfinite(alpha) or not 1e-12 <= alpha <= 1-1e-12:
+        raise ValueError('INFERENCE_TAIL_PROBABILITY_INVALID')
+    df = _degrees(degrees_of_freedom)
+    target = math.log(alpha)
+    # The declared alpha and df limits put the quantile strictly inside this
+    # positive binary64 interval; logarithmic bisection also resolves tails
+    # near probability one for df=1 without linear-scale premature stopping.
+    low,high = -700.0,40.0
+    if not log_chi_square_survival(math.exp(low),df) >= target >= log_chi_square_survival(math.exp(high),df):
+        raise ValueError('INFERENCE_CHI_SQUARE_QUANTILE_BRACKET_FAILED')
+    for iteration in range(1,201):
+        if iteration%32 == 0: checkpoint()
+        middle=(low+high)/2
+        if log_chi_square_survival(math.exp(middle),df) > target: low=middle
+        else: high=middle
+        if high-low <= 2e-13: break
+    else:
+        raise ValueError('INFERENCE_CHI_SQUARE_QUANTILE_CONVERGENCE_FAILED')
+    value = math.exp((low+high)/2)
+    tail = chi_square_survival(value,df)
+    relative_error = abs(tail-alpha)/alpha
+    if relative_error > 5e-10:
+        raise ValueError('INFERENCE_CHI_SQUARE_QUANTILE_TAIL_RESIDUAL_FAILED')
+    return dict(critical_value=value, lower=math.exp(low), upper=math.exp(high),
+                requested_upper_tail=alpha, attained_upper_tail=tail,
+                tail_absolute_error=abs(tail-alpha), tail_relative_error=relative_error,
+                degrees_of_freedom=df,iterations=iteration,
+                arithmetic='BINARY64_NOT_INTERVAL_CERTIFIED')
